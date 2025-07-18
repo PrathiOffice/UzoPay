@@ -5,10 +5,12 @@ import apiClient from '../../services/apiClient';
 import LoadingScreen from '../../components/LoadingScreen';
 import { SnackbarCloseReason } from '@mui/material';
 import CustomSnackbar from '../../components/CustomSnackbar';
+import { useNavigate } from 'react-router-dom';   
 
 type Option = { label: string; value: string; first_name?: string; last_name?: string };
 
 const AddAppointment: React.FC = () => {
+    const navigate = useNavigate();                
     const [providerOptions, setProviderOptions] = useState<Option[]>([]);
     const [parentOptions, setParentOptions] = useState<Option[]>([]);
     const [petOptions, setPetOptions] = useState<Option[]>([]);
@@ -198,7 +200,15 @@ const AddAppointment: React.FC = () => {
                 const data = response.data ?? response;
 
                 if (Array.isArray(data.slots)) {
-                    const availableSlots = data.slots.filter((slot: any) => slot.available && !slot.booked);
+const now = new Date();
+const selected = new Date(selectedDate!);
+
+const availableSlots = data.slots.filter((slot: any) => {
+    const slotTime = new Date(`${selectedDate}T${slot.start}`);
+    const isToday = selected.toDateString() === now.toDateString();
+
+    return slot.available && !slot.booked && (!isToday || slotTime > now);
+});
                     const options = availableSlots.map((slot: any) => ({
                         label: slot.slot,
                         value: slot.start,
@@ -329,6 +339,7 @@ const AddAppointment: React.FC = () => {
             });
             setSnackbar({ open: true, message: 'Appointment booked successfully!', severity: 'success' });
             console.log('Appointment booked successfully:', response);
+            navigate('/', { replace: true });
         } catch (error: any) {
             setSnackbar({
                 open: true,

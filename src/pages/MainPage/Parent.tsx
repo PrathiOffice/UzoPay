@@ -6,6 +6,7 @@ import About from './About';
 import Services from './Service';
 import WhatIsPetSync from './WhatIsPetsync';
 import WhyPetSync from './WhypetSync';
+import Banner from './Banner';
 
 const Parent: React.FC = () => {
   return (
@@ -17,26 +18,29 @@ const Parent: React.FC = () => {
           }
         `}
       </style>
-      <div className="p-0">
+      <div className="p-0 paw-cursor">
         <Header />
         <div id="home" className="min-h-screen">
           <Home />
         </div>
+        {/* <div id="home" className="min-h-screen">
+          <Banner />
+        </div> */}
         <div id="about" className="min-h-screen">
           <About />
         </div>
-        <div id="what-is-petsync" className="min-h-screen">
+        {/* <div id="what-is-petsync" className="min-h-screen">
           <WhatIsPetSync />
-        </div>
+        </div> */}
         <div id="petsync" className="min-h-screen">
           <Petsync />
         </div>
         <div id="services" className="min-h-screen">
           <Services />
         </div>
-        <div id="why-petsync" className="min-h-screen">
+        {/* <div id="why-petsync" className="min-h-screen">
           <WhyPetSync />
-        </div>
+        </div> */}
       </div>
     </>
   );
