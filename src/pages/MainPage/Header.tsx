@@ -11,8 +11,9 @@ const navItems = [
   { label: 'About Us', to: '#about' },
   { label: 'Services', to: '#services' },
   { label: 'Shop', to: 'https://shop.petsync.in/', external: true },
-  { label: 'Vendors', to: '/vendors' },
-  { label: 'Resources', to: '/blog' },
+  { label: 'Vendors', to: '#VendorBenefitsPetsync' },
+  { label: 'veterinarian', to: '#VeterinariansSection' },
+  { label: 'Resources', to: '#ResourcesSupport' },
   // { label: 'Contact', to: '#contact' },
 ];
 

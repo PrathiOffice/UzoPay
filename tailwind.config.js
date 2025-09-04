@@ -5,6 +5,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+     fontFamily: {
+  titlefont: ['Merriweather', 'serif'],
+  subTitleFont: ['Cinzel', 'serif'],
+    contetTitleFont: ['Lora', 'serif'],
+  contentFont: ['Lora', 'serif'],   
+  outfit: ['Outfit', 'sans-serif'],
+
+  roboto: ['Roboto', 'sans-serif'],
+  poppins: ['Poppins', 'sans-serif'],
+  montserrat: ['Montserrat', 'sans-serif'],
+  robotoCondensed: ['"Roboto Condensed"', 'sans-serif'],
+  lora: ['Lora', 'serif'],
+  oswald: ['Oswald', 'sans-serif'],
+
+    
+},
+
       keyframes: {
         pop: {
           '0%,100%': { transform: 'scale(0)', opacity: 0 },
@@ -112,10 +129,15 @@ module.exports = {
           '50%': { filter: 'blur(0)', opacity: 1 },
           '100%': { filter: 'blur(4px)', opacity: 0.6 },
         },
+        slip: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
       },
 
 
       animation: {
+        slip: 'slip 1.5s ease-in-out infinite',
         pop: 'pop 4s ease-in-out infinite',
         'spin-slow': 'spin 3s linear infinite',
         fadeIn: 'fadeIn 1s ease-out forwards',
