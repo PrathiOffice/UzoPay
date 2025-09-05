@@ -27,14 +27,16 @@ import GalaxyFlyThrough from './GalaxyFlyThrough';
 import Testimonials from './Testimonials';
 import TerminalContactForm from './TerminalContactForm';
 import VendorBenefitsPetsync from './vendorBenefitsPetsync';
+import PetSyncContactForm from './PetSyncContactForm';
 
 const Parent: React.FC = () => {
-  useEffect(() => {
+useEffect(() => {
   if ('scrollRestoration' in window.history) {
     window.history.scrollRestoration = 'manual';
   }
-  window.scrollTo(0, 0);
-}, []);
+  // Reset scroll position immediately
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+}, []);  
 
   return (
     <>
@@ -45,7 +47,7 @@ const Parent: React.FC = () => {
           }
         `}
       </style>
-      <div className="p-0 paw-cursor  ">
+      <div className="p-0 paw-cursor  min-h-fit">
         <Header />
         <div id="home" className="min-h-fit">
           <Home />
@@ -80,8 +82,8 @@ const Parent: React.FC = () => {
            <div id="Testimonials" className="bg-black min-h-fit">
           <Testimonials />
         </div>
-         <div id="TerminalContactForm" className="bg-black min-h-fit">
-          <TerminalContactForm />
+         <div id="PetSyncContactForm" className="bg-black min-h-fit">
+          <PetSyncContactForm />
         </div>
         <div id="Footer" className="bg-black min-h-fit">
           <Footer />
