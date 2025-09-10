@@ -153,7 +153,11 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({ benefit, direction, isHighl
       initial="hidden"
       animate={controls}
       variants={cardVariants[direction]}
-      className={`relative ${isHighlight ? 'bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 text-white p-10' : 'bg-white p-8'} rounded-3xl shadow-xl flex flex-col items-start md:items-start text-left hover:scale-105 transition-transform`}
+      className={`relative ${isHighlight
+          ? 'bg-blue-800 text-white p-10'  // ✅ Solid dark blue
+          : 'bg-white p-8'
+        } rounded-3xl shadow-xl flex flex-col items-start md:items-start text-left hover:scale-105 transition-transform`}
+
     >
       {benefit.number && (
         <div
@@ -195,10 +199,39 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({ benefit, direction, isHighl
       )}
 
       {isHighlight && (
-        <p className="text-lg md:text-xl w-full text-center font-contentFont mt-2">
-          {benefit.content[0]}
-        </p>
+        <div className="w-full text-center">
+          <p className="text-lg md:text-xl font-contentFont mt-2 mb-8">
+            {benefit.content[0]}
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-6 justify-center">
+            {/* Register */}
+            <a
+              href="#register"
+              className="px-6 py-3 rounded-lg font-semibold shadow-md bg-white text-blue-800 border border-blue-200 hover:bg-blue-100 transition"
+            >
+              Register as a Vendor
+            </a>
+
+            {/* Download App */}
+            <a
+              href="#download"
+              className="px-6 py-3 rounded-lg font-semibold shadow-md bg-white text-green-700 border border-green-200 hover:bg-green-100 transition"
+            >
+              Download Vendor App / APK
+            </a>
+
+            {/* Contact Support */}
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-lg font-semibold shadow-md bg-white text-gray-800 border border-gray-200 hover:bg-gray-100 transition"
+            >
+              Contact Our Vendor Support Team
+            </a>
+          </div>
+        </div>
       )}
+
     </motion.div>
   );
 };
