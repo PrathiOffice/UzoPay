@@ -1,6 +1,6 @@
 module.exports = {
   devServer: (devServerConfig) => {
-    devServerConfig.allowedHosts = ['local.petsync360admin'];
+    devServerConfig.allowedHosts = ['local.uzopay'];
     return devServerConfig;
   },
 };
