@@ -35,35 +35,35 @@ const Footer: React.FC = () => {
     {
       heading: "Payment",
       links: [
-        { label: "Payment Gateway", href: "#" },
-        { label: "Payment Links", href: "#" },
-        { label: "Payment Methods", href: "#" },
-        { label: "Bulk Payment", href: "#" },
-        { label: "Invoice", href: "#" },
+        { label: "Payment Gateway", href: "/" },
+        { label: "Payment Links", href: "/" },
+        { label: "Payment Methods", href: "/" },
+        { label: "Bulk Payment", href: "/" },
+        { label: "Invoice", href: "/" },
       ],
     },
     {
       heading: "AI Banking",
       links: [
-        { label: "Current Account", href: "#" },
-        { label: "Accounting", href: "#" },
-        { label: "API Banking", href: "#" },
-        { label: "UPI Autopay", href: "#" },
-        { label: "Tax Payment", href: "#" },
+        { label: "Current Account", href: "/" },
+        { label: "Accounting", href: "/" },
+        { label: "API Banking", href: "/" },
+        { label: "UPI Autopay", href: "/" },
+        { label: "Tax Payment", href: "/" },
       ],
     },
     {
       heading: "", 
       links: [
-        { label: "Cards", href: "#" },
-        { label: "CMS", href: "#" },
+        { label: "Cards", href: "/" },
+        { label: "CMS", href: "/" },
       ],
     },
     {
       heading: "Company",
       links: [
-        { label: "About us", href: "#" },
-        { label: "Contact us", href: "#" },
+        { label: "About us", href: "/" },
+        { label: "Contact us", href: "/" },
       ],
     },
   ];
@@ -94,13 +94,13 @@ const Footer: React.FC = () => {
 
           <div className="footer-socials">
             <SocialIcon
-              href="#"
+              href="/"
               label="facebook"
               icon={<Facebook size={14} />}
             />
-            <SocialIcon href="#" label="x" icon={<X size={14} />} />
+            <SocialIcon href="/" label="x" icon={<X size={14} />} />
             <SocialIcon
-              href="#"
+              href="/"
               label="instagram"
               icon={<Instagram size={14} />}
             />
@@ -118,9 +118,9 @@ const Footer: React.FC = () => {
 
   <div className="footer-actions">
     <div className="footer-policies">
-      <a href="#">Terms of Service</a>
+      <a href="/">Terms of Service</a>
       <span className="policy-sep">|</span>
-      <a href="#">Privacy Policy</a>
+      <a href="/">Privacy Policy</a>
     </div>
 
     <button

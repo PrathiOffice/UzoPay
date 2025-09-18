@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/HomePage.css';
-import bannerImage from '../../assets/Images/Banner-BG.png';
 
 const HomePage = () => {
   return (

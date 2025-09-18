@@ -1,7 +1,6 @@
 import React from "react";
 import { images } from "../../constants/images";
 import "../../styles/PayoutService.css";
-import ScrollAnimation from "../../animation/ScrollAnimation";
 
 const HexagonSection = () => {
   const getImageSize = () => {

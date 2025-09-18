@@ -19,29 +19,32 @@ const Bizsettle: React.FC = () => {
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting && !hasAnimated) {
+        setHasAnimated(true);
 
-          if (window.innerWidth >= 768) {
-            setTimeout(() => setShowBizsettleImage(true), 2000);
-          } else {
-            setShowBizsettleText(true);
-          }
+        if (window.innerWidth >= 768) {
+          setTimeout(() => setShowBizsettleImage(true), 2000);
+        } else {
+          setShowBizsettleText(true);
         }
-      },
-      { threshold: 0.5 }
-    );
+      }
+    },
+    { threshold: 0.5 }
+  );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+  const currentSection = sectionRef.current; // ✅ store in a variable
 
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, [hasAnimated]);
+  if (currentSection) observer.observe(currentSection);
+
+  return () => {
+    if (currentSection) observer.unobserve(currentSection);
+  };
+}, [hasAnimated]);
+
 
   return (
     <section
