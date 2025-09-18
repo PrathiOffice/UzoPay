@@ -66,7 +66,7 @@ const HexagonSection = () => {
           <div className="flex justify-center mb-8">
             <img
               src={images.Hexagons}
-              alt="Single Image"
+              alt="payment"
               className="w-[var(--image-size)] h-[var(--image-size)] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
           </div>
@@ -125,7 +125,7 @@ const HexagonSection = () => {
           <div className="flex items-center justify-center">
             <img
               src={images.Hexagons}
-              alt="Single Image"
+              alt="payment"
               className="w-[var(--image-size)] h-[var(--image-size)] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
           </div>
