@@ -1,42 +1,23 @@
-import React, { useEffect } from 'react';
-import Header from './Header';
-import Home from './Home';
-import Petsync from './Pestync';
-import About from './About';
-import Services from './Service';
-import WhatIsPetSync, { HeroParallaxDemo } from './WhatIsPetsync';
-import WhyPetSync from './WhypetSync';
-import Banner from './Banner';
-import ShopSection from './Shop';
-import { AnimatedTestimonials } from '../../components/WebPageContent/UI/animated-testimonials';
-import { CardHoverEffectDemo } from './Features';
-import PetSyncBooking from './Booking';
-
-import WhyPetParentsLovePetSync360 from './WhyPetParentsLovePetSync360';
-import Vendor from './Vendor';
-import Footer from './Footer';
-import ResourcesSupport from './ResourcesSupport';
-import { Timeline } from '../../components/WebPageContent/UI/timeline';
-import TimelineDemo from './Masters';
-import VeterinariansSection from './VeterinariansSection';
-import { AnimatedTestimonialsDemo } from './AnimatedTestimonialsDemoserive';
-import RotatingCube from './Cube';
-import ManualRotatingCubes from './Cube';
-import GalaxyScene from './Cube';
-import GalaxyFlyThrough from './GalaxyFlyThrough';
-import Testimonials from './Testimonials';
-import TerminalContactForm from './TerminalContactForm';
-import VendorBenefitsPetsync from './vendorBenefitsPetsync';
-import PetSyncContactForm from './PetSyncContactForm';
+import React, { useEffect } from "react";
+import Header from "./Header";
+import Home from "./Home";
+import ExpertiseSection from "./Expertise";
+import Content from "./Content";
+import Bizsettle from "./Bizsettle";
+import SimplifyPayments from "./SimplifyPayments";
+import ReasonOfPatner from "./ReasonOfPatner";
+import LetsBuild from "./LetsBuild";
+import PayoutService from "./PayoutService";
+import Footer from "./Footer";
+import FeedBack from "./FeedBack";
 
 const Parent: React.FC = () => {
-useEffect(() => {
-  if ('scrollRestoration' in window.history) {
-    window.history.scrollRestoration = 'manual';
-  }
-  // Reset scroll position immediately
-  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-}, []);  
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   return (
     <>
@@ -47,45 +28,36 @@ useEffect(() => {
           }
         `}
       </style>
-      <div className="p-0 paw-cursor  min-h-fit">
+      <div className="p-0 paw-cursor min-h-fit bg-black">
         <Header />
         <div id="home" className="min-h-fit">
           <Home />
         </div>
-        <div id="about" className="min-h-fit">
-          <About />
+        <div id="expertise" className="min-h-fit">
+          <ExpertiseSection />
         </div>
-        <div id="why-petsync" className="min-h-fit">
-          <WhyPetParentsLovePetSync360 />
+        <div id="content" className="min-h-fit">
+          <Content />
         </div>
-        
-        <div id="" className="bg-black min-h-fit">
-          <CardHoverEffectDemo />
+        <div id="PayoutService" className="bg-black min-h-fit">
+          <PayoutService />
         </div>
-        <div id="VeterinariansSection" className="bg-black min-h-fit">
-          <VeterinariansSection />
+        <div id="bizsettle" className="bg-black min-h-fit">
+          <Bizsettle />
         </div>
-        <div id="VendorBenefitsPetsync" className="min-h-fit">
-          <VendorBenefitsPetsync />
+        <div id="SimplifyPayments" className="bg-black min-h-fit">
+          <SimplifyPayments />
         </div>
-        <div id="services" className="bg-black min-h-fit">
-          <AnimatedTestimonialsDemo />
+        <div id="ReasonOfPatner" className="min-h-fit">
+          <ReasonOfPatner />
         </div>
-        <div id="TimelineDemo" className="bg-black min-h-fit">
-          <TimelineDemo />
+        <div id="LetsBuild" className="bg-black min-h-fit">
+          <LetsBuild />
         </div>
-
-        <div id="ResourcesSupport" className="bg-black min-h-fit">
-          <ResourcesSupport />
+        <div id="ClientFeedbacks" className="bg-black min-h-fit">
+          <FeedBack />
         </div>
-       
-           <div id="Testimonials" className="bg-black min-h-fit">
-          <Testimonials />
-        </div>
-         <div id="PetSyncContactForm" className="bg-black min-h-fit">
-          <PetSyncContactForm />
-        </div>
-        <div id="Footer" className="bg-black min-h-fit">
+        <div id="footer" className="bg-black min-h-fit">
           <Footer />
         </div>
       </div>

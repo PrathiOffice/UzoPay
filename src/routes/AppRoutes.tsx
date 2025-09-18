@@ -1,40 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/MainPage/Parent';
-import Dashboard from '../pages/DashBoard/Dashboardpage';
-import Users from '../pages/DashBoard/UserPage';
-import ApprovalPage from '../pages/DashBoard/Approvalpage';
-import ApprovalDetailsPage from '../pages/DashBoard/ApprovalDetailpage';
-import PetOwners from '../pages/Petowner/PetOwner';
-import PetOwnerDetailspage from '../pages/Petowner/PetOwnerDetailspage';
-import VeterinarianList from '../pages/DashBoard/vetenerian';
-import AppointmentManager from '../pages/DashBoard/Appointmentmanager';
-import PaymentDashboard from '../pages/DashBoard/Payments';
-import SupportDashboard from '../pages/DashBoard/Support';
-import CouponPage from '../pages/DashBoard/CouponPage';
-import PromotionsPage from '../pages/DashBoard/Promotions';
-import DeliveryDashboard from '../pages/DashBoard/DeliveryPartners';
-import VendorsPage from '../pages/DashBoard/VendorsPage';
-import ProductPage from '../pages/DashBoard/Products/Products';
-import OrderListPage from '../pages/DashBoard/OrderlistPage';
-import OrderDetailsPage from '../pages/DashBoard/OrderDetails';
-import CouponForm from '../Forms/CoupunsForm';
-import CouponDetailsPage from '../pages/DashBoard/CoupoundetailsPage';
-import ProductView from '../pages/DashBoard/Products/ProductsView';
-import ProductForm from '../Forms/ProductForm';
-import ChargeCodeForm from '../Forms/ChargeCodeForms';
-import PetsList from '../pages/Petowner/Pets';
-import AddAppointment from '../pages/Appointment/AddAppointment';
-import WhyPetSync from '../pages/MainPage/WhypetSync';
-import About from '../pages/MainPage/About';
-import ParentRegistration from '../pages/Auth/ParentRegister';
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} /> {/* Set Home as the main page */}
-      <Route path="/AddAppointment" element={<AddAppointment />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/parentRegistration" element={<ParentRegistration />} />
+      {/* <Route path="/about" element={<About />} /> */}
 
       {/* <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/orders" element={<OrderListPage />} />

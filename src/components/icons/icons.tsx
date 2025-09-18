@@ -1,23 +1,58 @@
-import React from 'react';
-import { Clock, Edit2, Eye, Trash, Repeat, Plus, X, CheckCircle, PowerOff, XCircle, PawPrint } from 'lucide-react';
+export const ShieldIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+    <path
+      d="M9 12L11 14L16 9"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+  </svg>
+);
 
-type IconProps = React.SVGProps<SVGSVGElement> & {
-  size?: number;
-};
+export const ArrowIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+     d="M4 10H16M16 10L12 6M16 10L12 14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
-const createIcon =
-  (Component: React.FC<React.SVGProps<SVGSVGElement>>) =>
-  ({ size = 20, ...rest }: IconProps) =>
-    <Component width={size} height={size} {...rest} />;
-
-export const IconEdit = createIcon(Edit2);
-export const IconEye = createIcon(Eye);
-export const IconTrash = createIcon(Trash);
-export const IconClock = createIcon(Clock);
-export const IconRefund = createIcon(Repeat);
-export const IconPlus =createIcon(Plus)
-export const IconCancel = createIcon(X);
-export const IconActivate = createIcon(CheckCircle); // or Power
-export const IconDeactivate = createIcon(PowerOff);  // or XCircle
-export const IconReject = createIcon(XCircle); 
-export const IconPaw=createIcon(PawPrint)
+export const NavArrowIcon = ({ direction }: { direction: "prev" | "next" }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d={direction === "prev" ? "M15 18L9 12L15 6" : "M9 6L15 12L9 18"}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

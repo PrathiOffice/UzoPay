@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.expertise-section {
+  background: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.expertise-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.subtitle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  margin-bottom: 1rem;
+}
+
+.expertise-subtitle {
+  color: #888;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.line-image-left,
+.line-image-right {
+  width: clamp(40px, 8vw, 60px);
+  height: auto;
+  object-fit: contain;
+}
+
+.line-image-right {
+  transform: scaleX(-1);
+}
+
+.expertise-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.125rem);
+  line-height: 110%;
+  letter-spacing: -0.04em;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, #808080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  margin: 0;
+  padding: 0.2em 0;
+}
+
+.expertise-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.expertise-card {
+  overflow-y: auto;
+  border: 30px solid transparent;
+  border-image-source: url('../assets/Images/Frame221.png');
+  border-image-slice: 50 fill;
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); /* Reduced left padding */
+  position: relative;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: translateY(30px);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 300px;
+  padding-left: 1rem;
+}
+
+.expertise-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.card-content {
+  position: relative;
+  text-align: left;
+  margin: 0;            /* Reset margins */
+  padding: 0;           /* Remove padding */
+}
+
+.card-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 120%;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+}
+
+.card-description {
+  color: #bbb;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  line-height: 150%;
+  margin-bottom: 1rem;
+  text-align: left; /* Align text to the left */
+  max-width: 100%;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.card-image {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  height: clamp(120px, 15vw, 160px);
+  overflow: hidden;
+}
+
+.service-image {
+  max-width: clamp(120px, 14vw, 160px);
+  max-height: clamp(120px, 14vw, 160px);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.card-shield {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #6a6b6c;
+  transition: color 0.3s ease;
+}
+
+.card-arrow {
+  position: absolute;
+  bottom: -0.5rem;
+  right: 0;
+  color: #5a4581;
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover .card-shield,
+.expertise-card:hover .card-arrow,
+.expertise-card.active .card-arrow {
+  color: #00D4AA;
+}
+
+.expertise-card:hover .service-image,
+.expertise-card.active .service-image {
+  transform: scale(1.1);
+}
+
+.expertise-card:hover .card-arrow {
+  transform: translateX(5px);
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: clamp(40px, 5vw, 50px);
+  height: clamp(40px, 5vw, 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover:not(.disabled) {
+  background: rgba(0, 212, 170, 0.3);
+  border-color: rgba(0, 212, 170, 0.5);
+  transform: scale(1.05);
+}
+
+.nav-button.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4K Screens */
+@media screen and (min-width: 2560px) {
+  .subtitle-container {
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  .line-image-left,
+  .line-image-right {
+    width: clamp(60px, 10vw, 80px);
+  }
+
+  .expertise-container {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1920px;
+  }
+
+  .expertise-card {
+    min-height: 280px;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); /* Adjusted left padding */
+  }
+
+  .card-image {
+    height: 200px;
+  }
+.service-image {
+  max-width: clamp(120px, 14vw, 160px);
+  max-height: clamp(120px, 14vw, 160px);
+  width: auto; /* Changed from 100% to auto to prevent stretching */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+  .card-title {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .card-description {
+    font-size: 1.125rem;
+    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .expertise-title {
+    font-size: 3.75rem;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    padding: 0.2em 0;
+  }
+}
+
+/* Laptop and Desktop (769px - 1440px) */
+@media screen and (max-width: 1440px) {
+  .subtitle-container {
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .line-image-left,
+  .line-image-right {
+    width: clamp(50px, 8vw, 60px);
+  }
+
+  .expertise-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+  }
+
+  .expertise-card {
+    min-height: 280px;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); /* Adjusted left padding */
+  }
+
+  .card-image {
+    height: clamp(100px, 12vw, 140px);
+  }
+
+  .service-image {
+    max-width: clamp(100px, 12vw, 140px);
+    max-height: clamp(100px, 12vw, 140px);
+  }
+
+  .card-title {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .card-description {
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .expertise-title {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    padding: 0.2em 0;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media screen and (max-width: 768px) {
+  .expertise-section {
+    padding: clamp(2rem, 4vw, 3rem) 1rem;
+  }
+
+  .subtitle-container {
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .line-image-left,
+  .line-image-right {
+    width: clamp(40px, 7vw, 50px);
+  }
+
+  .expertise-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .expertise-card {
+    min-height: 260px;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); /* Adjusted left padding */
+  }
+
+  .expertise-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    padding: 0.2em 0;
+  }
+
+  .card-image {
+    height: clamp(100px, 12vw, 140px);
+  }
+
+  .service-image {
+    max-width: clamp(100px, 12vw, 140px);
+    max-height: clamp(100px, 12vw, 140px);
+  }
+
+  .card-title {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .card-description {
+    font-size: clamp(0.7rem, 1.8vw, 0.875rem);
+    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+
+  .nav-button {
+    width: clamp(36px, 4.5vw, 44px);
+    height: clamp(36px, 4.5vw, 44px);
+  }
+}
+
+/* Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+  .expertise-section {
+    padding: clamp(1.5rem, 4vw, 2rem) 1rem;
+  }
+
+  .expertise-header {
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .subtitle-container {
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .line-image-left,
+  .line-image-right {
+    width: clamp(30px, 6vw, 40px);
+  }
+
+  .expertise-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    padding: 0.2em 0;
+  }
+
+  .expertise-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .expertise-card {
+    min-height: 240px;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); /* Adjusted left padding */
+  }
+
+  .card-image {
+    height: clamp(80px, 12vw, 120px);
+  }
+
+  .service-image {
+    max-width: clamp(80px, 10vw, 120px);
+    max-height: clamp(80px, 10vw, 120px);
+  }
+
+  .card-title {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .card-description {
+    font-size: clamp(0.625rem, 1.8vw, 0.75rem);
+    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navigation {
+    display: none;
+  }
+}

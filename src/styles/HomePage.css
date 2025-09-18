@@ -1,0 +1,237 @@
+.homepage {
+  min-height: 100vh;
+  background: #000000 url('/src/assets/Images/Banner\ -BG.png') no-repeat center 80%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 1rem 2rem 1rem;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.content .subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 2rem;
+  color: #d3d3d3;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-button {
+  background-color: #1b1a1f;
+  color: white;
+  padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
+  border: 1px solid #999;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.explore-button::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid #666;
+  border-radius: 29px;
+  z-index: -1;
+}
+
+.explore-button:hover {
+  background-color: #555;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.explore-button:hover::before {
+  border-color: #999;
+}
+
+.footer-text {
+  margin-top: 2rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #bbb;
+  line-height: 1.4;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile devices (320px - 768px) */
+@media screen and (max-width: 768px) {
+  .homepage {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-position: center center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    margin-top: 0;
+    width: 100%;
+    padding-top: 0;
+  }
+  
+  .content h1 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    line-height: 1.3;
+  }
+  
+  .content .subtitle {
+    margin-bottom: 2.5rem;
+    padding: 0 0.5rem;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  }
+  
+  .explore-button {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-text {
+    margin-top: 2.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Small mobile devices (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .homepage {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  .content h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    line-height: 1.2;
+  }
+  
+  .content .subtitle {
+    margin-bottom: 2rem;
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+  
+  .footer-text {
+    margin-top: 2rem;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .homepage {
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  .content h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    line-height: 1.3;
+  }
+  
+  .content .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .homepage {
+    min-height: 70vh;
+    padding: 6rem 3rem 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 1367px) {
+  .homepage {
+    min-height: 70vh;
+    padding: 8rem 4rem 2rem 4rem;
+  }
+  
+  .content h1 {
+    font-size: 4rem;
+  }
+  
+  .content .subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .homepage {
+    min-height: 100vh;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    margin-top: 0;
+  }
+  
+  .content h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+  
+  .content .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-text {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+  .content h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-button {
+    transition: none;
+  }
+  
+  .explore-button:hover {
+    transform: none;
+  }
+}

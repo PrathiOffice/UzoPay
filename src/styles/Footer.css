@@ -1,0 +1,234 @@
+/* Main Footer Container */
+.footer {
+    padding: 5rem 2rem 2.5rem;
+    background-color: #000;
+    /* make sure this is consistent */
+    color: #b3b3b3;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+
+/* For screens up to 900px (tablets and mobiles) */
+@media (max-width: 900px) {
+    .footer {
+        margin-top: 7rem; /* Margin for tablets and larger mobiles */
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* For smaller screens (e.g., phones below 600px) */
+@media (max-width: 600px) {
+    .footer {
+        margin-top: 14.5rem; /* Slightly smaller margin for smaller phones, if needed */
+    }
+}
+
+/* Left Section */
+.footer-about {
+    padding-right: 2rem;
+}
+
+.footer-logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #B4B4B4;
+    max-width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+
+}
+
+/* Socials */
+.footer-socials {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 1rem;
+}
+
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b3b3b3;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Column Sections (Payment, AI Banking, Company) */
+.footer-col {}
+
+.footer-heading {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500; /* Medium weight */
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  margin-bottom: 1.2rem;
+  border-left: 2px solid #2e2e2e;
+}
+
+
+/* List links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #b3b3b3;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0;
+  vertical-align: middle;
+
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff; /* Optional: makes hover more visible */
+}
+
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #121212;
+    margin: 3rem 0 0;
+    width: 100%;
+}
+
+.footer-bottom {
+    width: 100%;
+    max-width: none;
+    margin: 1.5rem 0 0;
+    padding: 0 2rem 0.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.footer-copy {
+    color: #b3b3b3;
+}
+
+.footer-policies {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.footer-policies a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.footer-policies a:hover {
+    color: #fff;
+}
+
+.policy-sep {
+    color: #444;
+}
+
+.scroll-top {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #b3b3b3;
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+
+
+.footer-fixed-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: 1px solid #222;
+}
+
+.footer-fixed-right .footer-policies {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-fixed-right .footer-policies a {
+  color: #b3b3b3;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-fixed-right .footer-policies a:hover {
+  color: #fff;
+}

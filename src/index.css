@@ -5,10 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* 
 .paw-cursor {
   cursor: url('../src/assets/Images/paw1.png'), auto;
-}
+} */
 
 
 body {

@@ -1,0 +1,80 @@
+.hexagon-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-position: center; 
+  background-size: cover;
+}
+
+.hexagon-section.with-image {
+  background-image: var(--bg-image, linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%));
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.pattern-overlay {
+  background-image: var(--pattern-image, none);
+  background-size: 300px 300px;
+  background-position: center; 
+  background-repeat: repeat;
+  opacity: 0.3;
+}
+
+@media (max-width: 640px) {
+  .pattern-overlay {
+    background-size: 200px 200px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .pattern-overlay {
+    background-size: 250px 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pattern-overlay {
+    background-size: 400px 400px;
+  }
+}
+
+.hexagon-section .backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.hexagon-section .drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+}
+
+.hexagon-section .drop-shadow-2xl {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+}
+
+.hexagon-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.streamlined-title {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 100%; 
+  letter-spacing: -5%;
+}
+
+
+.comprehensive-title {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+}
+

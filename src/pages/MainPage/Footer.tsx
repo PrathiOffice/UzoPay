@@ -1,94 +1,139 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion, Variants } from 'framer-motion';
-import { FaEnvelope, FaMapMarkerAlt, FaDownload, FaUserTie, FaUserMd, FaHeadset } from 'react-icons/fa';
-import { IoMdContact } from 'react-icons/io';
+import React from "react";
+import { Facebook, Instagram, X, ArrowUp } from "lucide-react";
+import "../../styles/Footer.css";
+import { Logo } from "../MainPage/Header";
+interface FooterColProps {
+  heading?: string;
+  links: { label: string; href: string }[];
+}
+
+const FooterCol: React.FC<FooterColProps> = ({ heading, links }) => (
+  <div className="footer-col">
+    {heading && <h3 className="footer-heading">{heading}</h3>}
+    <ul className="footer-links">
+      {links.map((link, idx) => (
+        <li key={idx}>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const SocialIcon: React.FC<{
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}> = ({ href, label, icon }) => (
+  <a className="social-btn" href={href} aria-label={label}>
+    {icon}
+  </a>
+);
 
 const Footer: React.FC = () => {
-  const itemVariants: Variants = {
-    hidden: { y: 10, opacity: 0 },
-    visible: (custom: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.08, type: 'spring', stiffness: 150, damping: 12 },
-    }),
-    hover: { scale: 1.1, color: '#ed2c59', transition: { type: 'spring', stiffness: 500, damping: 10 } },
-  };
+  const footerCols = [
+    {
+      heading: "Payment",
+      links: [
+        { label: "Payment Gateway", href: "#" },
+        { label: "Payment Links", href: "#" },
+        { label: "Payment Methods", href: "#" },
+        { label: "Bulk Payment", href: "#" },
+        { label: "Invoice", href: "#" },
+      ],
+    },
+    {
+      heading: "AI Banking",
+      links: [
+        { label: "Current Account", href: "#" },
+        { label: "Accounting", href: "#" },
+        { label: "API Banking", href: "#" },
+        { label: "UPI Autopay", href: "#" },
+        { label: "Tax Payment", href: "#" },
+      ],
+    },
+    {
+      heading: "", 
+      links: [
+        { label: "Cards", href: "#" },
+        { label: "CMS", href: "#" },
+      ],
+    },
+    {
+      heading: "Company",
+      links: [
+        { label: "About us", href: "#" },
+        { label: "Contact us", href: "#" },
+      ],
+    },
+  ];
 
   return (
-    <motion.footer
-      initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-      className="bg-black text-gray-200 py-4 px-3"
-    >
-      <div className="container mx-auto flex flex-col gap-4">
-        
-        {/* Contact Us Heading */}
-        <motion.h3
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, type: 'spring', stiffness: 140, damping: 12 }}
-          className="text-sm font-semibold text-gray-100 text-center flex items-center justify-center gap-2 font-cinzel"
-        >
-          <IoMdContact className="text-lg" />
-          CONTACT US
-        </motion.h3>
+    <footer className="footer" id="footer">
+      <div className="footer-container">
+        <div className="footer-about">
+          <h2 className="footer-logo">
+            <Logo
+              onClick={function (e: React.MouseEvent<HTMLAnchorElement>): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
+          </h2>
+          <div className="footer-desc">
+            <p>
+              Our payment gateway simplifies transactions for e-commerce <br />
+              businesses, delivering fast and secure processing.With smooth
+              <br />
+            </p>
+            <p>
+              integration, we enhance your store&apos;s payment capabilities.
+              Optimize <br /> your checkout process and boost customer
+              satisfaction easily.
+            </p>
+          </div>
 
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.25, type: 'spring', stiffness: 140, damping: 12 }}
-          className="flex flex-wrap justify-center gap-4 md:gap-6"
-        >
-          {/* Email */}
-          <motion.div variants={itemVariants} custom={0} initial="hidden" animate="visible" whileHover="hover" className="flex items-center gap-2">
-            <FaEnvelope className="text-pink-500" />
-            <span className="text-gray-400 text-[0.95rem] font-jost">support@petsync360.com</span>
-          </motion.div>
-
-          {/* Location */}
-          <motion.div variants={itemVariants} custom={1} initial="hidden" animate="visible" whileHover="hover" className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-green-400" />
-            <span className="text-gray-400 text-[0.95rem] font-jost">Available in India, UAE, and USA</span>
-          </motion.div>
-
-          {/* Links */}
-          {[
-            { label: 'Download App', to: '/download', icon: <FaDownload className="text-blue-400" /> },
-            { label: 'Become a Vendor', to: '/vendor', icon: <FaUserTie className="text-yellow-400" /> },
-            { label: 'Join as Vet', to: '/vet', icon: <FaUserMd className="text-purple-400" /> },
-            { label: 'Customer Support', to: '/support', icon: <FaHeadset className="text-red-400" /> },
-          ].map((item, index) => (
-            <motion.div
-              key={item.label}
-              variants={itemVariants}
-              custom={index + 2}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              className="flex items-center gap-2"
-            >
-              {item.icon}
-              <Link to={item.to} className="text-gray-400 text-[0.95rem] hover:text-pink-600 transition font-jost">
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Bottom Bar */}
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.35 }} className="mt-4 pt-3 border-t border-gradient-to-r from-pink-500 to-orange-400 text-center">
-          <p className="text-gray-400 text-[0.65rem] font-roboto">
-            Copyright © 2025 PetSync360. All rights reserved.
-          </p>
-        </motion.div>
+          <div className="footer-socials">
+            <SocialIcon
+              href="#"
+              label="facebook"
+              icon={<Facebook size={14} />}
+            />
+            <SocialIcon href="#" label="x" icon={<X size={14} />} />
+            <SocialIcon
+              href="#"
+              label="instagram"
+              icon={<Instagram size={14} />}
+            />
+          </div>
+        </div>
+        {footerCols.map((col, idx) => (
+          <FooterCol key={idx} heading={col.heading} links={col.links} />
+        ))}
       </div>
-    </motion.footer>
+
+<hr className="footer-divider" />
+
+<div className="footer-bottom">
+  <p className="footer-copy">© 2025 UzOPay</p>
+
+  <div className="footer-actions">
+    <div className="footer-policies">
+      <a href="#">Terms of Service</a>
+      <span className="policy-sep">|</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <button
+      className="scroll-top"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
+      <ArrowUp size={18} />
+    </button>
+  </div>
+</div>
+
+
+    </footer>
   );
 };
 
